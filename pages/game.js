@@ -3,7 +3,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import initialState from "../data/initial";
-import axios from '../utils/axios'
+import axios from "../utils/axios";
 
 import sleigh from "../public/sleigh.png";
 import reindeer from "../public/reindeer.png";
@@ -16,21 +16,20 @@ import present from "../public/present.png";
 import { useRouter } from "next/router";
 
 function GamePage() {
-    const router = useRouter()
+    const router = useRouter();
 
     const [result, setResult] = useState(initialState);
     const [modal, setModal] = useState([false, ""]);
-    const [phone, setPhone] = useState("")
-    const [time, setTime] = useState(null)
+    const [phone, setPhone] = useState("");
+    const [time, setTime] = useState(null);
     useEffect(() => {
-        setTime(Date.now())
-    }, [])
+        setTime(Date.now());
+    }, []);
 
     useEffect(() => {
-        console.log(router.query.phone)
-        setPhone(router.query.phone)
-    }, [router.query.phone])
-
+        console.log(router.query.phone);
+        setPhone(router.query.phone);
+    }, [router.query.phone]);
 
     const changeResult = (tag) => (value) => {
         setResult((curr) => {
@@ -60,13 +59,14 @@ function GamePage() {
                 return arr;
             });
             axios({
-                method: 'put',
+                method: "put",
                 url: `?phone=${phone}&time=${Date.now() - time}`,
-                headers: {'Access-Control-Allow-Origin': '*'}
-            }).then(_ => {
-                console.log("Submitted")
+                headers: { "Access-Control-Allow-Origin": "*" },
             })
-            .catch(err => console.error(err))
+                .then((_) => {
+                    console.log("Submitted");
+                })
+                .catch((err) => console.error(err));
         } else {
             setModal((curr) => {
                 let arr = [...curr];
@@ -85,7 +85,10 @@ function GamePage() {
                     name="description"
                     content="Play the Crossword Puzzle, win Offers!"
                 />
-                <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+                ></meta>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className={styles.row}>
@@ -429,9 +432,12 @@ function GamePage() {
                     }}
                 />
                 <div className={styles.gridItem}></div>
+                {/* <div className={styles.gridItem}></div>
                 <div className={styles.gridItem}></div>
-                <div className={styles.gridItem}></div>
-                <div className={styles.gridItem}></div>
+                <div className={styles.gridItem}></div> */}
+                <button className={styles.submit} onClick={handleSubmit}>
+                    Submit &#128276;
+                </button>
                 <div className={styles.gridItem}></div>
                 <input
                     className={styles.inputField}
@@ -505,9 +511,9 @@ function GamePage() {
                     alt="/"
                 />
             </div>
-            <button className={styles.submit} onClick={handleSubmit}>
+            {/* <button className={styles.submit} onClick={handleSubmit}>
                 Submit &#128276;
-            </button>
+            </button> */}
             <div
                 className={styles.modal}
                 style={{ display: modal[0] ? "flex" : "none" }}
@@ -519,8 +525,11 @@ function GamePage() {
                         setModal((curr) => {
                             return [false, ""];
                         });
-                        if(modal[1]==="Great job! If you gave one of the 10 fastest entries, you'll win the Christmas Offer at The Retro Lounge!"){
-                            router.push('/');
+                        if (
+                            modal[1] ===
+                            "Great job! If you gave one of the 10 fastest entries, you'll win the Christmas Offer at The Retro Lounge!"
+                        ) {
+                            router.push("/");
                         }
                     }}
                 >

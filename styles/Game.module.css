@@ -83,8 +83,8 @@
   }
   
   .submit{
-    width: 100px;
-    height: 40px;
+    height: 30px;
+    grid-column: 7 / span 3;
     color: #ffd700;
     font-size: 15px;
     font-weight: 700;
