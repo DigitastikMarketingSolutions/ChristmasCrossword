@@ -6,11 +6,19 @@ import retrologo from "../public/retrologo.png";
 import { useState } from "react";
 import axios from "../utils/axios";
 import { useRouter } from "next/router";
+import { useEffect } from "react/cjs/react.development";
 
 export default function Home() {
     const router = useRouter()
     const [data, setData] = useState({ name: "", phone: "" });
     const [disable, setDisable] = useState(false)
+
+    useEffect(() => {
+        document.addEventListener("load", function() {
+            var viewport = document.querySelector("meta[name=viewport]");
+            viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
+        })
+    }, [])
 
     const handleSubmit = () => {
         if(data.name && data.phone.length===10){
@@ -42,7 +50,6 @@ export default function Home() {
                     name="description"
                     content="Play the Christmas Crossword Puzzle, win Offers!"
                 />
-                <meta name="viewport" content="height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className={styles.heading}>

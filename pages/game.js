@@ -24,6 +24,10 @@ function GamePage() {
     const [time, setTime] = useState(null);
     useEffect(() => {
         setTime(Date.now());
+        document.addEventListener("load", function() {
+            var viewport = document.querySelector("meta[name=viewport]");
+            viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
+        })
     }, []);
 
     useEffect(() => {
@@ -432,9 +436,6 @@ function GamePage() {
                     }}
                 />
                 <div className={styles.gridItem}></div>
-                {/* <div className={styles.gridItem}></div>
-                <div className={styles.gridItem}></div>
-                <div className={styles.gridItem}></div> */}
                 <button className={styles.submit} onClick={handleSubmit}>
                     Submit &#128276;
                 </button>
