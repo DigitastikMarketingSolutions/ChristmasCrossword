@@ -35,7 +35,11 @@ export default function Home() {
                 if(res.data.messageCode==="success"){
                     router.push(`/game?phone=${data.phone}`)
                 } else if(res.data.messageCode==="user-exists") {
-                    alert("We've already received an entry from this number!");
+                    if(res.data.data[0].timeTaken){
+                        alert("We've already received an entry from this number!");
+                    } else {
+                        router.push(`/game?phone=${data.phone}`)
+                    }
                 }
             })
             .catch(err => console.error(err))
