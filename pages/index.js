@@ -18,7 +18,7 @@ export default function Home() {
             axios({
                 method: 'post',
                 data: data,
-                url: 'user',
+                url: '',
                 headers: {'Access-Control-Allow-Origin': '*'}
             }).then(res => {
                 if(res.data.messageCode==="success"){

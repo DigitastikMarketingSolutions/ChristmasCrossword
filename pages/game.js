@@ -61,7 +61,7 @@ function GamePage() {
             });
             axios({
                 method: 'put',
-                url: `user?phone=${phone}&time=${Date.now() - time}`,
+                url: `?phone=${phone}&time=${Date.now() - time}`,
                 headers: {'Access-Control-Allow-Origin': '*'}
             }).then(_ => {
                 console.log("Submitted")
