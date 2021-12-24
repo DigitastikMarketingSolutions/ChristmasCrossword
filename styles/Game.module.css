@@ -1,0 +1,113 @@
+.gamepage{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    text-align: center;
+    background-image: url('../public/bg.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .gridContainer{
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: 35px 35px 35px 35px 35px 35px 35px 35px 35px;
+  }
+  
+  .gridItem{
+    display: block;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .placeholder{
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    padding: 3px;
+    font-family: 'Merriweather', serif;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  
+  .inputField{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    background-image: linear-gradient(rgb(208, 220, 255) 0%, rgb(0, 174, 255) 20%, rgb(0, 174, 255) 80%, rgb(71, 117, 148) 100%), linear-gradient(90deg, rgb(250, 212, 212) 0%, rgb(243, 124, 124) 20%, rgb(243, 124, 124) 80%, rgb(250, 212, 212) 100%);
+    border: none;
+    border-left: 2px solid rgba(0, 83, 138, 0.438);
+    border-right: 2px solid rgba(0, 174, 255, 0.438);
+    /* border-left: 6px solid red; */
+    font-family: 'Merriweather', serif;
+    padding: 2px;
+  }
+  
+  .inputField::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: black;
+    font-weight: 700;
+  }
+  .inputField::-moz-placeholder { /* Firefox 19+ */
+    color: black;
+    font-weight: 700;
+  }
+  .inputField:-ms-input-placeholder { /* IE 10+ */
+    color: black;
+    font-weight: 700;
+  }
+  .inputField:-moz-placeholder { /* Firefox 18- */
+    color: black;
+    font-weight: 700;
+  }
+  
+  .row{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .clue{
+    height: 80px;
+  }
+  
+  .submit{
+    width: 100px;
+    height: 40px;
+    color: #ffd700;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Merriweather', serif;
+    background-color: #cc0000;
+    border: solid 3px #ffd700;
+    box-shadow: 0 0 15px #cc0000;
+  }
+
+  .modal{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 10px 20px;
+      position: absolute;
+      z-index: 20;
+      width: 80vw;
+      height: 50vh;
+      top: 25vh;
+      left: 10vw;
+      background-color: white;
+      border-radius: 20px;
+      font-family: 'Merriweather', serif;
+      font-size: 15px;
+  }
