@@ -3,10 +3,9 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import logo from "../public/WhatsAppLogo.png";
 import retrologo from "../public/retrologo.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "../utils/axios";
 import { useRouter } from "next/router";
-import { useEffect } from "react/cjs/react.development";
 
 export default function Home() {
     const router = useRouter()
@@ -18,6 +17,10 @@ export default function Home() {
             var viewport = document.querySelector("meta[name=viewport]");
             viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
         })
+
+        return () => {
+            document.removeEventListener("load")
+        }
     }, [])
 
     const handleSubmit = () => {
