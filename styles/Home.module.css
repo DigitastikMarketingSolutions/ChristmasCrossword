@@ -22,7 +22,7 @@
 }
 
 .register{
-  height: 40vh;
+  height: 300px;
   width: 70vw;
   display: flex;
   flex-direction: column;
