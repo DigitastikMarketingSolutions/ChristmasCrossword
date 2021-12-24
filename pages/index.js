@@ -40,7 +40,7 @@ export default function Home() {
                 <title>Merry Christmas by Retro Lounge</title>
                 <meta
                     name="description"
-                    content="Play the Crossword Puzzle, win Offers!"
+                    content="Play the Christmas Crossword Puzzle, win Offers!"
                 />
                 <meta name="viewport" content="height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
                 <link rel="icon" href="/favicon.ico" />
